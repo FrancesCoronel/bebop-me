@@ -1,0 +1,21 @@
+api_version: 1
+application: bebop-me
+handlers:
+- {static_files: favicon.ico, upload: favicon\.ico, url: /favicon\.ico}
+- {static_dir: css, url: /css}
+- {static_dir: ie, url: /css/ie}
+- {static_dir: images, url: /css/images}
+- {static_dir: js, url: /js}
+- http_headers: {Access-Control-Allow-Origin: 'http://bebop-me.appspot.com'}
+  static_dir: images
+  url: /images
+- http_headers: {Access-Control-Allow-Origin: 'http://bebop-me.appspot.com'}
+  static_dir: fonts
+  url: /fonts
+- {script: main.app, url: /.*}
+libraries:
+- {name: webapp2, version: latest}
+- {name: jinja2, version: latest}
+runtime: python27
+threadsafe: true
+version: 1
